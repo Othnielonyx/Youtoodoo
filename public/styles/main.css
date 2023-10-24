@@ -1,0 +1,13 @@
+.btn.btn-info {
+    background-color: rgb(12,110,253);
+    border-color: rgb(12,110,253);
+  }
+.btn.btn-info:hover{
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(12,110,253);
+  }
+
+  input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+  }

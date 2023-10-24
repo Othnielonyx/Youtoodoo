@@ -1,0 +1,68 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+      <div class="col-md-10 mx-auto col-lg-5">
+        <div class="box" id="heading">
+            <h1>
+                <%= new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }) %>
+            </h1>
+          </div>
+            <!-- Tabs content -->
+            <div class="tab-content" id="ex1-content">
+                <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel"
+                  aria-labelledby="ex1-tab-1">
+                  <ul class="list-group mb-0">
+                    <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded"
+                      style="background-color: #f4f6f7;">
+                      <input class="form-check-input me-2" type="checkbox" name="checkbox" value="" aria-label="..." />
+                      <label>Daily Text</label>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded"
+                      style="background-color: #f4f6f7;">
+                      <input class="form-check-input me-2" type="checkbox" name="checkbox" value="" aria-label="..." />
+                        <label>Forex</label>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded"
+                      style="background-color: #f4f6f7;">
+                      <input class="form-check-input me-2" type="checkbox" name="checkbox" value="" aria-label="..." />
+                      <label>Prepare for school</label>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded"
+                      style="background-color: #f4f6f7;">
+                      <input class="form-check-input me-2" type="checkbox" name="checkbox" value="" aria-label="..." />
+                      <label>Bath</label>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded"
+                      style="background-color: #f4f6f7;">
+                      <input class="form-check-input me-2" type="checkbox" name="checkbox" value="" aria-label="..." />
+                      <label>Code/Study</label>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded"
+                      style="background-color: #f4f6f7;">
+                      <input class="form-check-input me-2" type="checkbox" name="checkbox" value="" aria-label="..." />
+                      <label>Gym</label>
+                    </li>
+                    <% for (let i = 0; i < newListItems.length; i++) { %>
+                    <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded"
+                    style="background-color: #f4f6f7;">
+                    <input class="form-check-input me-2" type="checkbox"  value="" aria-label="..." />
+                    <label><%= locals.newListItems[i] %></label>
+                    <%}%>
+                  </li>
+                  </ul>
+                </div>
+              </div>
+              <br>
+              <form action="/submit" method="POST" class="d-flex justify-content-center align-items-center mb-4">
+                <div class="form-outline flex-fill">
+                  <input type="text" id="form2" name="newItem" class="form-control" />
+                  <label class="form-label" for="form2"></label>
+                </div>
+                <button type="submit" class="btn btn-info ms-2 mb-4">Add Task 👆🏾</button>
+              </form>
+              <!-- Tabs content -->
+      </div>
+    </div>
+  </div>
+
+<%- include("partials/footer.ejs") %>
